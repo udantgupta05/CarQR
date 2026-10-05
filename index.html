@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Udant Gupta | Vehicle Contact</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+    --navy:#003b70;
+    --blue:#0b4f8a;
+    --light:#f5f7f9;
+    --border:#dfe4e8;
+    --text:#171717;
+    --muted:#697680;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff;
+    color:var(--text);
+}
+
+/* HEADER */
+.header{
+    height:82px;
+    background:#fff;
+    border-bottom:1px solid #e3e6e8;
+    display:flex;
+    align-items:center;
+    padding:0 6%;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.suzuki-logo{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    display:block;
+}
+
+.brand{
+    font-size:21px;
+    font-weight:700;
+    letter-spacing:.35px;
+    color:var(--navy);
+}
+
+.brand-sub{
+    margin-top:3px;
+    font-size:9px;
+    letter-spacing:2px;
+    color:#78838c;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(120deg,#f6f8fa 0%,#edf3f7 55%,#fff 100%);
+    padding:58px 7% 62px;
+    border-bottom:1px solid var(--border);
+}
+
+.hero-inner{
+    max-width:1050px;
+    margin:auto;
+}
+
+.small-title{
+    font-size:12px;
+    letter-spacing:2.5px;
+    font-weight:700;
+    color:var(--blue);
+    margin-bottom:12px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,62px);
+    font-weight:700;
+    letter-spacing:-1.6px;
+    margin-bottom:8px;
+}
+
+.hero-sub{
+    font-size:18px;
+    color:var(--muted);
+}
+
+.vehicle-number{
+    display:inline-block;
+    margin-top:25px;
+    background:#fff;
+    border:1px solid #ccd4db;
+    padding:11px 19px;
+    border-radius:4px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* CONTENT */
+.content{
+    max-width:1050px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.section-title{
+    font-size:27px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.section-description{
+    color:var(--muted);
+    margin-bottom:28px;
+}
+
+.contact-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border:1px solid var(--border);
+    border-radius:7px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 10px 35px rgba(20,40,60,.08);
+}
+
+.left{
+    padding:35px;
+    background:linear-gradient(145deg,#f5f7f9,#e9eef2);
+    border-right:1px solid var(--border);
+}
+
+.right{
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.vehicle-label{
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:2px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.vehicle-name{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.variant{
+    color:var(--muted);
+    font-size:16px;
+}
+
+.info{
+    margin-top:35px;
+    border-top:1px solid #d7dde2;
+    padding-top:22px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:12px 0;
+    border-bottom:1px solid #e1e5e8;
+    font-size:14px;
+}
+
+.info-label{color:var(--muted)}
+.info-value{font-weight:700;text-align:right}
+
+.contact-title{
+    font-size:21px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.contact-text{
+    color:var(--muted);
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding:15px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:11px;
+    transition:.2s;
+}
+
+.call{
+    background:var(--navy);
+    color:#fff;
+}
+
+.call:hover{background:#002d55}
+
+.whatsapp{
+    background:#fff;
+    color:var(--navy);
+    border:1px solid #bcc8d2;
+}
+
+.whatsapp:hover{background:#edf5fb}
+
+.footer{
+    border-top:1px solid var(--border);
+    margin-top:40px;
+    padding:30px 20px;
+    text-align:center;
+    color:#8a959e;
+    font-size:12px;
+}
+
+.disclaimer{margin-top:8px}
+
+@media(max-width:700px){
+    .header{padding:0 20px}
+    .suzuki-logo{width:48px;height:48px}
+    .hero{padding:42px 22px}
+    .hero h1{font-size:42px}
+    .content{padding:35px 15px}
+    .contact-card{grid-template-columns:1fr}
+    .left{
+        border-right:none;
+        border-bottom:1px solid var(--border)
+    }
+    .right{padding:28px 22px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo-area">
+        <img
+            src="suzuki-logo.png"
+            class="suzuki-logo"
+            alt="Suzuki"
+        >
+
+        <div>
+            <div class="brand">MARUTI SUZUKI</div>
+            <div class="brand-sub">VEHICLE CONTACT</div>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="small-title">OWNER CONTACT</div>
+
+        <h1>Udant Gupta</h1>
+
+        <div class="hero-sub">
+            Vehicle owner contact information
+        </div>
+
+        <div class="vehicle-number">
+            DL11CB4996
+        </div>
+    </div>
+</section>
+
+<main class="content">
+
+    <div class="section-title">Vehicle Details</div>
+
+    <div class="section-description">
+        Information associated with this vehicle.
+    </div>
+
+    <div class="contact-card">
+
+        <div class="left">
+
+            <div class="vehicle-label">MODEL</div>
+
+            <div class="vehicle-name">BALENO</div>
+
+            <div class="variant">ZETA CVT</div>
+
+            <div class="info">
+
+                <div class="info-row">
+                    <span class="info-label">Registration</span>
+                    <span class="info-value">DL11CB4996</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Owner</span>
+                    <span class="info-value">Udant Gupta</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Vehicle</span>
+                    <span class="info-value">Maruti Suzuki Baleno</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="right">
+
+            <div class="contact-title">
+                Need to contact the owner?
+            </div>
+
+            <div class="contact-text">
+                For parking, blocking, safety or other
+                vehicle-related matters, contact the
+                owner directly.
+            </div>
+
+            <a
+                class="button call"
+                href="tel:+918595964079">
+                ☎ &nbsp; CALL OWNER
+            </a>
+
+            <a
+                class="button whatsapp"
+                href="https://wa.me/918595964079?text=Hi%20Udant%2C%20I%27m%20contacting%20you%20regarding%20your%20Baleno%20DL11CB4996.">
+                💬 &nbsp; WHATSAPP OWNER
+            </a>
+
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    Vehicle Contact Page
+
+    <div class="disclaimer">
+        This is a personal vehicle-contact page and is not an
+        official Maruti Suzuki website or service.
+    </div>
+</footer>
+
+</body>
+</html>
