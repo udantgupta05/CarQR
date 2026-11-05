@@ -5,21 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Udant Gupta | Vehicle Contact</title>
 
-<!-- FONTS: Cinzel (serif, for headings) + Fira Sans (for normal text), both from Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* ===== COLOURS - change them here and the whole page changes ===== */
 :root{
-    --bg:#000;                      /* page background (black) */
-    --header-bg:#0c0e11;            /* top bar, slightly lighter than the page */
-    --blue:#1e9be0;                 /* NEXA blue accent */
-    --text:#fff;                    /* main text (white) */
-    --muted:#9a9fa6;                /* grey text */
-    --line:rgba(255,255,255,.18);   /* thin borders */
-    --cut:12px;                     /* size of the angled button corners */
+    --bg:#000;
+    --header-bg:#0c0e11;
+    --blue:#1e9be0;
+    --text:#fff;
+    --muted:#9a9fa6;
+    --line:rgba(255,255,255,.18);
+    --cut:12px;
 }
 
 body{
@@ -28,7 +26,6 @@ body{
     color:var(--text);
 }
 
-/* ===== HEADER ===== */
 .header{
     height:82px;
     background:var(--header-bg);
@@ -49,8 +46,7 @@ body{
     height:52px;
     object-fit:contain;
     display:block;
-    /* Turns the logo white so it shows on black.
-       If you see a white square instead, delete this one line. */
+
     filter:brightness(0) invert(1);
 }
 
@@ -69,9 +65,7 @@ body{
     color:var(--muted);
 }
 
-/* ===== HERO (big black area at the top) ===== */
 .hero{
-    /* soft grey glow at the bottom, like the floor light on NEXA's page */
     background:
         radial-gradient(ellipse 70% 60% at 50% 120%, rgba(255,255,255,.14), transparent 70%),
         var(--bg);
@@ -117,7 +111,6 @@ body{
     letter-spacing:.2em;
 }
 
-/* ===== CONTENT ===== */
 .content{
     max-width:1050px;
     margin:auto;
@@ -211,7 +204,6 @@ body{
     margin-bottom:24px;
 }
 
-/* ===== BUTTONS (angled corners like NEXA's "Explore Now") ===== */
 .button{
     position:relative;
     isolation:isolate;
@@ -227,7 +219,6 @@ body{
     letter-spacing:.06em;
     margin-top:12px;
     transition:.2s;
-    /* this line cuts the top-left and bottom-right corners */
     clip-path:polygon(
         var(--cut) 0, 100% 0,
         100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
@@ -235,16 +226,12 @@ body{
     );
 }
 
-/* White filled button */
 .call{
     background:#fff;
     color:#000;
 }
 .call:hover{background:var(--blue);color:#fff}
 
-/* Black button with a thin white outline.
-   The white background is the "outline"; the ::before piece is the black
-   inside, made 1px smaller on every side so a thin white edge shows. */
 .whatsapp{
     background:#fff;
     color:#fff;
@@ -265,7 +252,6 @@ body{
 
 .button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
-/* ===== FOOTER ===== */
 .footer{
     border-top:1px solid var(--line);
     margin-top:40px;
@@ -280,7 +266,6 @@ body{
     font-style:italic;
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:700px){
     .header{padding:0 20px}
     .brand{font-size:16px}
