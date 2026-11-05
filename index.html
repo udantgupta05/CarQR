@@ -5,29 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Udant Gupta | Vehicle Contact</title>
 
+<!-- FONTS: Cinzel (serif, for headings) + Fira Sans (for normal text), both from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
+/* ===== COLOURS - change them here and the whole page changes ===== */
 :root{
-    --navy:#003b70;
-    --blue:#0b4f8a;
-    --light:#f5f7f9;
-    --border:#dfe4e8;
-    --text:#171717;
-    --muted:#697680;
+    --bg:#000;                      /* page background (black) */
+    --header-bg:#0c0e11;            /* top bar, slightly lighter than the page */
+    --blue:#1e9be0;                 /* NEXA blue accent */
+    --text:#fff;                    /* main text (white) */
+    --muted:#9a9fa6;                /* grey text */
+    --line:rgba(255,255,255,.18);   /* thin borders */
+    --cut:12px;                     /* size of the angled button corners */
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#fff;
+    font-family:'Fira Sans',Arial,Helvetica,sans-serif;
+    background:var(--bg);
     color:var(--text);
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header{
     height:82px;
-    background:#fff;
-    border-bottom:1px solid #e3e6e8;
+    background:var(--header-bg);
+    border-bottom:1px solid var(--line);
     display:flex;
     align-items:center;
     padding:0 6%;
@@ -44,27 +49,34 @@ body{
     height:52px;
     object-fit:contain;
     display:block;
+    /* Turns the logo white so it shows on black.
+       If you see a white square instead, delete this one line. */
+    filter:brightness(0) invert(1);
 }
 
 .brand{
-    font-size:21px;
-    font-weight:700;
-    letter-spacing:.35px;
-    color:var(--navy);
+    font-family:'Cinzel',Georgia,serif;
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:.3em;
+    color:var(--text);
 }
 
 .brand-sub{
-    margin-top:3px;
-    font-size:9px;
-    letter-spacing:2px;
-    color:#78838c;
+    margin-top:4px;
+    font-size:10px;
+    letter-spacing:.3em;
+    color:var(--muted);
 }
 
-/* HERO */
+/* ===== HERO (big black area at the top) ===== */
 .hero{
-    background:linear-gradient(120deg,#f6f8fa 0%,#edf3f7 55%,#fff 100%);
-    padding:58px 7% 62px;
-    border-bottom:1px solid var(--border);
+    /* soft grey glow at the bottom, like the floor light on NEXA's page */
+    background:
+        radial-gradient(ellipse 70% 60% at 50% 120%, rgba(255,255,255,.14), transparent 70%),
+        var(--bg);
+    padding:70px 7% 76px;
+    border-bottom:1px solid var(--line);
 }
 
 .hero-inner{
@@ -73,18 +85,20 @@ body{
 }
 
 .small-title{
-    font-size:12px;
-    letter-spacing:2.5px;
-    font-weight:700;
-    color:var(--blue);
-    margin-bottom:12px;
+    font-family:'Cinzel',Georgia,serif;
+    font-size:13px;
+    letter-spacing:.2em;
+    font-weight:600;
+    color:var(--text);
+    margin-bottom:14px;
 }
 
 .hero h1{
-    font-size:clamp(38px,7vw,62px);
-    font-weight:700;
-    letter-spacing:-1.6px;
-    margin-bottom:8px;
+    font-family:'Cinzel',Georgia,serif;
+    font-size:clamp(36px,7vw,64px);
+    font-weight:500;
+    letter-spacing:.05em;
+    margin-bottom:10px;
 }
 
 .hero-sub{
@@ -94,26 +108,27 @@ body{
 
 .vehicle-number{
     display:inline-block;
-    margin-top:25px;
-    background:#fff;
-    border:1px solid #ccd4db;
-    padding:11px 19px;
-    border-radius:4px;
+    margin-top:28px;
+    border:1px solid var(--blue);
+    color:var(--blue);
+    padding:11px 20px;
     font-size:18px;
-    font-weight:700;
-    letter-spacing:2px;
+    font-weight:500;
+    letter-spacing:.2em;
 }
 
-/* CONTENT */
+/* ===== CONTENT ===== */
 .content{
     max-width:1050px;
     margin:auto;
-    padding:50px 20px;
+    padding:55px 20px;
 }
 
 .section-title{
+    font-family:'Cinzel',Georgia,serif;
     font-size:27px;
-    font-weight:700;
+    font-weight:500;
+    letter-spacing:.06em;
     margin-bottom:8px;
 }
 
@@ -125,17 +140,14 @@ body{
 .contact-card{
     display:grid;
     grid-template-columns:1fr 1fr;
-    border:1px solid var(--border);
-    border-radius:7px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow:0 10px 35px rgba(20,40,60,.08);
+    border:1px solid var(--line);
+    background:var(--bg);
 }
 
 .left{
     padding:35px;
-    background:linear-gradient(145deg,#f5f7f9,#e9eef2);
-    border-right:1px solid var(--border);
+    background:radial-gradient(circle at 20% 110%, rgba(255,255,255,.12), transparent 65%);
+    border-right:1px solid var(--line);
 }
 
 .right{
@@ -147,27 +159,30 @@ body{
 
 .vehicle-label{
     font-size:12px;
-    color:var(--muted);
-    letter-spacing:2px;
-    font-weight:700;
+    color:var(--blue);
+    letter-spacing:.25em;
+    font-weight:600;
     margin-bottom:10px;
 }
 
 .vehicle-name{
-    font-size:32px;
-    font-weight:700;
+    font-family:'Cinzel',Georgia,serif;
+    font-size:34px;
+    font-weight:500;
+    letter-spacing:.08em;
     margin-bottom:5px;
 }
 
 .variant{
     color:var(--muted);
     font-size:16px;
+    letter-spacing:.1em;
 }
 
 .info{
     margin-top:35px;
-    border-top:1px solid #d7dde2;
-    padding-top:22px;
+    border-top:1px solid var(--line);
+    padding-top:12px;
 }
 
 .info-row{
@@ -175,77 +190,110 @@ body{
     justify-content:space-between;
     gap:20px;
     padding:12px 0;
-    border-bottom:1px solid #e1e5e8;
+    border-bottom:1px solid var(--line);
     font-size:14px;
 }
 
 .info-label{color:var(--muted)}
-.info-value{font-weight:700;text-align:right}
+.info-value{font-weight:500;text-align:right}
 
 .contact-title{
+    font-family:'Cinzel',Georgia,serif;
     font-size:21px;
-    font-weight:700;
-    margin-bottom:7px;
+    font-weight:500;
+    letter-spacing:.05em;
+    margin-bottom:8px;
 }
 
 .contact-text{
     color:var(--muted);
-    line-height:1.5;
-    margin-bottom:22px;
+    line-height:1.6;
+    margin-bottom:24px;
 }
 
+/* ===== BUTTONS (angled corners like NEXA's "Explore Now") ===== */
 .button{
+    position:relative;
+    isolation:isolate;
     display:flex;
     align-items:center;
     justify-content:center;
     gap:10px;
     width:100%;
-    padding:15px;
-    border-radius:3px;
+    padding:16px;
     text-decoration:none;
-    font-weight:700;
-    margin-top:11px;
+    font-weight:500;
+    font-size:16px;
+    letter-spacing:.06em;
+    margin-top:12px;
     transition:.2s;
+    /* this line cuts the top-left and bottom-right corners */
+    clip-path:polygon(
+        var(--cut) 0, 100% 0,
+        100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
+        0 100%, 0 var(--cut)
+    );
 }
 
+/* White filled button */
 .call{
-    background:var(--navy);
-    color:#fff;
+    background:#fff;
+    color:#000;
 }
+.call:hover{background:var(--blue);color:#fff}
 
-.call:hover{background:#002d55}
-
+/* Black button with a thin white outline.
+   The white background is the "outline"; the ::before piece is the black
+   inside, made 1px smaller on every side so a thin white edge shows. */
 .whatsapp{
     background:#fff;
-    color:var(--navy);
-    border:1px solid #bcc8d2;
+    color:#fff;
 }
+.whatsapp::before{
+    content:"";
+    position:absolute;
+    inset:1px;
+    background:var(--bg);
+    z-index:-1;
+    clip-path:polygon(
+        calc(var(--cut) - 1px) 0, 100% 0,
+        100% calc(100% - var(--cut) + 1px), calc(100% - var(--cut) + 1px) 100%,
+        0 100%, 0 calc(var(--cut) - 1px)
+    );
+}
+.whatsapp:hover{color:var(--blue)}
 
-.whatsapp:hover{background:#edf5fb}
+.button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
+/* ===== FOOTER ===== */
 .footer{
-    border-top:1px solid var(--border);
+    border-top:1px solid var(--line);
     margin-top:40px;
-    padding:30px 20px;
-    text-align:center;
-    color:#8a959e;
-    font-size:12px;
+    padding:30px 7%;
+    text-align:right;
+    color:var(--muted);
+    font-size:13px;
 }
 
-.disclaimer{margin-top:8px}
+.disclaimer{
+    margin-top:8px;
+    font-style:italic;
+}
 
+/* ===== MOBILE ===== */
 @media(max-width:700px){
     .header{padding:0 20px}
-    .suzuki-logo{width:48px;height:48px}
-    .hero{padding:42px 22px}
-    .hero h1{font-size:42px}
+    .brand{font-size:16px}
+    .suzuki-logo{width:44px;height:44px}
+    .hero{padding:48px 22px 54px}
     .content{padding:35px 15px}
     .contact-card{grid-template-columns:1fr}
     .left{
         border-right:none;
-        border-bottom:1px solid var(--border)
+        border-bottom:1px solid var(--line)
     }
     .right{padding:28px 22px}
+    .footer{text-align:center}
 }
 </style>
 </head>
@@ -354,8 +402,7 @@ body{
     Vehicle Contact Page
 
     <div class="disclaimer">
-        This is a personal vehicle-contact page and is not an
-        official Maruti Suzuki website or service.
+        This is a personal vehicle-contact page.
     </div>
 </footer>
 
